@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h1>Exercice 0</h1>
+
+        <script type="text/javascript">
+
+        /* Section 1 */
+
+        let name = "Joe"; // je déclare une variable nommée name qui prend pour valeur chaîne de caractère  'joe'
+        let city = 'London'; // je déclare une variable nommée city qui prend pour valeur chaîne de caractère 'London'
+        let age = 32;  // je déclare une variable nommée age qui prend pour valeur l'entier 32.
+        let isRed = true;  // je déclare une variable nommée isRed qui prend pour valeur boolean 'true'.
+        let isOld = age > 80; // je déclare une variable nommée isOld qui prend pour valeur boolean le retour de comparaison
+
+        let previousJobs = ['lawyer', 'developper', 'Professionnal climber'];
+            // je déclare une variable nommée previousJobs prend pour valeur list qui contient 'lawyer', 'developper', 'Professionnal climber'
+
+        function info(height, weight) {  // je declare une function nommée info avec deux parametre 'height', 'weight'
+            if (height > 180) {         // si 'height' est plus grand que 180
+                console.log('Vous êtes grand'); // j'affiche 'Vous êtes grand'
+            }
+            if (weight < 0) {          // si 'weight' est plus petit que 0
+                console.log('oups, there is a problem'); // j'affiche 'oups, there is a problem'
+            } else if ( weight < 15) {  // si 'weight' est plus petit que 15
+                console.log('Are you that slim ?')  // j'affiche 'Are you that slim ?'
+            } else {                    //sinon,
+                console.log('Good !')    // j'affiche 'Good !'
+            }
+        }
+
+        info(165, 45); // je execute la function info avec deux paramétre 165, 45
+
+        let myHeight = 175;  // je déclare une variable nommée myHeight qui prend pour valeur l'entier 175.
+        let myWeight = 86;   // je déclare une variable nommée myWeight qui prend pour valeur l'entier 86.
+
+        info(myHeight, myWeight); //  je execute la function info avec deux paramétre myHeight, myWeight
+
+        info(myHeight + 15, myWeight - 100); //  je execute la function info avec deux paramétre myHeight +15, myWeight -100
+
+        function toUpper(variable) {   // je declare une function nommée toUpper avec un paramètre  'variable'
+            return variable.toUpperCase();  // je retourne la valeur de la chaîne courante(variable), convertie en majuscules.
+        }
+
+        let upperName = toUpper(name); //  je déclare une variable nommée upperName qui prend pour valeur chaîne de caractère de retourne de la founction de toUpper qui prends un paramètre   name
+
+        // for (i = 0; i < 3; i = i + 1) {  //  je fais une boucle que j'affiche tous les elements de previousJobs
+        //     console.log(previousJobs[i]);
+        // }
+
+        /* Section 2: */
+
+        // afficher la ville dans laquele Joe vit.
+        console.log(city);
+
+        // afficher si Joe est roux ou pas.
+        console.log(isRed);
+
+        /* Section 3 */
+
+        console.log(myVariable); // index.html?_ijt=mtdv2dr2f2icsdlv1vff3c7ljr:65 Uncaught ReferenceError: myVariable is not defined ; il y a une error
+                                // myVariable n'est pas déclaré
+        </script>
+
+    </body>
+</html>
