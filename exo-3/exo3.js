@@ -8,8 +8,11 @@ console.log('exo-3');
  */
 
 function getUserChoice(userInput) {
-     userInput = userInput.toLowerCase();
+    userInput = userInput.toLowerCase();
     if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+        return userInput;
+    }
+    if (userInput === 'bomb') {
         return userInput;
     } else {
         throw 'Input error!';
@@ -53,10 +56,13 @@ function determineWinner(userChoice, computerChoice) {
             return 'Lost';
         }
     }
+    if (userChoice === 'bomb'){
+        return 'Won';
+    }
 }
 
 function playGame() {
-    let uChoice = getUserChoice('rocsdfsdfsdfk');
+    let uChoice = getUserChoice('bomb');
     let computerChoice = getComputerChoice();
     console.log('your choice is : ' + uChoice);
     console.log('computer\'s choice is : ' + computerChoice);
