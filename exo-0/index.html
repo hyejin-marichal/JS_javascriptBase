@@ -11,17 +11,17 @@
 
         /* Section 1 */
 
-        let name = "Joe"; // je déclare une variable nommée name qui prend pour valeur chaîne de caractère  'joe'
-        let city = 'London'; // je déclare une variable nommée city qui prend pour valeur chaîne de caractère 'London'
+        let name = "Joe"; // je déclare une variable nommée name qui prend pour valeur chaîne de caractères  'joe'
+        let city = 'London'; // je déclare une variable nommée city qui prend pour valeur chaîne de caractères 'London'
         let age = 32;  // je déclare une variable nommée age qui prend pour valeur l'entier 32.
         let isRed = true;  // je déclare une variable nommée isRed qui prend pour valeur boolean 'true'.
         let isOld = age > 80; // je déclare une variable nommée isOld qui prend pour valeur boolean le retour de comparaison
 
         let previousJobs = ['lawyer', 'developper', 'Professionnal climber'];
-            // je déclare une variable nommée previousJobs prend pour valeur list qui contient 'lawyer', 'developper', 'Professionnal climber'
+            // je déclare une variable nommée previousJobs prend pour valeur un tableau qui contient 'lawyer', 'developper', 'Professionnal climber'
 
-        function info(height, weight) {  // je declare une function nommée info avec deux parametre 'height', 'weight'
-            if (height > 180) {         // si 'height' est plus grand que 180
+        function info(height, weight) {  // je declare une function nommée info qui prends deux parametre 'height', 'weight'
+            if (height > 180) {         //  ke declare une condition qui verefie si 'height' est plus grand que 180 (
                 console.log('Vous êtes grand'); // j'affiche 'Vous êtes grand'
             }
             if (weight < 0) {          // si 'weight' est plus petit que 0
@@ -46,23 +46,23 @@
             return variable.toUpperCase();  // je retourne la valeur de la chaîne courante(variable), convertie en majuscules.
         }
 
-        let upperName = toUpper(name); //  je déclare une variable nommée upperName qui prend pour valeur chaîne de caractère de retourne de la founction de toUpper qui prends un paramètre   name
+        let upperName = toUpper(name); //  je déclare une variable nommée upperName qui prend pour valeur chaîne de caractère de retourne de la founction de toUpper qui prends un paramètre  name
 
-        // for (i = 0; i < 3; i = i + 1) {  //  je fais une boucle que j'affiche tous les elements de previousJobs
-        //     console.log(previousJobs[i]);
-        // }
+        for (i = 0; i < 3; i = i + 1) {  //  je fais une boucle que j'affiche tous les elements de previousJobs
+            console.log(previousJobs[i]);
+        }
 
         /* Section 2: */
 
-        // afficher la ville dans laquele Joe vit.
-        console.log(city);
+        // afficher la ville dans laquelle Joe vit.
+        console.log(`joe vit à ${city}`);
 
         // afficher si Joe est roux ou pas.
         console.log(isRed);
 
         /* Section 3 */
 
-        console.log(myVariable); // index.html?_ijt=mtdv2dr2f2icsdlv1vff3c7ljr:65 Uncaught ReferenceError: myVariable is not defined ; il y a une error
+        // console.log(myVariable); // index.html?_ijt=mtdv2dr2f2icsdlv1vff3c7ljr:65 Uncaught ReferenceError: myVariable is not defined ; il y a une error
                                 // myVariable n'est pas déclaré
         </script>
 
