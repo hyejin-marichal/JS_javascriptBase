@@ -14,7 +14,7 @@ let team = {
     }]
 };
 
-// 2.créer une fonction addPlayer qui prends trois arguments : first, last, et age et ajoute à l'objet team un joueur.
+// 2.créer une function addPlayer qui prends trois arguments : first, last, et age et ajoute à l'objet team un joueur.
 
 function addPlayer(first, last, age) {
 
@@ -46,48 +46,97 @@ addGame('DA', 50, 40);
 console.log(team);
 
 // 5. Calculer la somme des points de votre équipe sur tous les matchs joués.
-// version  #1
-function sumPoints(team) {
+
+// utilise une boucle pour sum
+//
+// function sumPoints(team) {
+//     let sumPoints = 0;
+//     for (let i = 0; i < team._games.length; i++) {
+//         sumPoints += team._games[i].teamPoints;
+//     }
+//     console.log(sumPoints); // return sumPoints;
+// }
+
+
+// utilise for... in
+function sumPoints(obj, pro, pros) {
     let sumPoints = 0;
-    for (let i = 0; i < team._games.length; i++) {
-        sumPoints += team._games[i].teamPoints;
+    for (let points in obj[pro]) {
+        sumPoints += obj[pro][points][pros];
     }
-    console.log(sumPoints); // return sumPoints;
+    return sumPoints; // return sumPoints;
 }
 
-sumPoints(team); // console.log(sumPoints(team));
 
-// version  #2
+console.log(sumPoints(team, '_games', 'teamPoints')); // console.log(sumPoints(team));
+
+// utilise la methode '.reduce()'
 console.log(team._games.reduce((acc, value) => acc + value.teamPoints, 0));
 
 // 6.Calculer la moyenne des points de l'équipe adverse sur tous les matchs
 
-// version  #1
-function avgRivalPoints(team) {
-    let sumRivalPoints = 0;
-    for (let i = 0; i < team._games.length; i++) {
-        sumRivalPoints += team._games[i].opponentPoints;
-    }
-    let avgRival = sumRivalPoints / team._games.length;
-    console.log(avgRival);
+// utilise une boucle pour sum
+// function avgRivalPoints(team) {
+//     let sumRivalPoints = 0;
+//     for (let i = 0; i < team._games.length; i++) {
+//         sumRivalPoints += team._games[i].opponentPoints;
+//     }
+//     let avgRival = sumRivalPoints / team._games.length;
+//     console.log(avgRival);
+// }
+// avgRivalPoints(team);
+
+// utilise for.. in avec funtion sumPoints
+
+
+function avgRivalPoints(obj, pro, pros) {
+    let sumOpp = sumPoints(obj, pro, pros);
+    let countOpp = obj[pro].length;
+    return sumOpp / countOpp;
+    // console.log(sumOpp / countOpp);
+    // console.log(`total points of our ${countOpp} rivals : ${sumOpp}  and average : ${sumOpp / countOpp}`);
+
 }
-avgRivalPoints(team);
 
-// version  #2
+console.log(avgRivalPoints(team, '_games', 'opponentPoints'));
 
-console.log(team._games.reduce((acc, value) => acc + value.opponentPoints, 0)/team._games.length);
+
+// utilise la methode '.reduce()'
+
+console.log(team._games.reduce((acc, value) => acc + value.opponentPoints, 0) / team._games.length);
 
 // 7. Ecrire une fonction qui permet de trouver le joueur le plus agé.
 
+function findOlder(obj, pro, name, age) {
+    let old = 0;
+    let nameOld;
+    for (let i in obj[pro]) {
+        if (old < obj[pro][i][age]) {
+            old = obj[pro][i][age];
+            nameOld = obj[pro][i][name];
+        }
+    }
+// return old;
+    console.log(`le joueur plus agé est ${nameOld} a ${old} ans`)
+}
+
+findOlder(team, '_players', 'firstName', 'age');
+
+// utiliser la method sort
 
 
+// 8. Bonus: Trier les joueurs par ordre alphabétique.
 
+let namePlayer = team._players.sort((a, b) => a.firstName.localeCompare(b.firstName, 'en',
+    {ignorePunctuation: true}));
+console.log(namePlayer);
 
 
 console.log("exo-6");
 
 // commenter cette ligne de code.
-var joeInfo = {
+
+var joeInfo = {               // une variable joeInfo est un object qui contient 5 pro
     name: "Joe's house",
     rooms: 5,
     garage: false,
@@ -102,5 +151,6 @@ console.log(joeInfo.cars.length);
 // changer le nombre de salle de bains de Joe : il n'en possède au'une.
 
 joeInfo.bathrooms = 1;
+
 // Joe vient d'acquérir un garage changer la structure pour le refléter.
-joeInfo.garage.sturcture = 'refléter';
+joeInfo.garage = true;
