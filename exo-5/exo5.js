@@ -10,7 +10,8 @@ for (let i = 0; i < input.length; i++) {
     // console.log(vowels.indexOf(input.charAt(i)));
     for (let j = 0; j < vowels.length; j++) {
         if (input.charAt(i) === vowels[j]) {
-            let addresultArray = resultArray.push(input.charAt(i));
+            // let addresultArray = //
+            resultArray.push(input.charAt(i));
         }
     }
 }
