@@ -7,6 +7,13 @@ console.log('exo-3');
  * @returns {string}
  */
 
+// const rock = 'rock';
+// const paper = 'paper';
+// const scissors = 'scissors';
+// const bomb = 'bomb';
+//const computerInput = [rock, paper, scissor];
+
+
 function getUserChoice(userInput) {
     userInput = userInput.toLowerCase();
     if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
@@ -14,10 +21,17 @@ function getUserChoice(userInput) {
     }
     if (userInput === 'bomb') {
         return userInput;
-    } else {
-        throw 'Input error!';
     }
+        throw 'Input error!';
 }
+// => on peut utiliser aussi switch
+// => function getUserChoice(userInput) {
+// userInput.toLowerCase();
+// switch (userInput) {
+//     case 'rock' :
+//         return  userInput;
+//
+// }
 
 function getComputerChoice() {
     let computer = Math.floor(Math.random() * 3);
@@ -30,13 +44,23 @@ function getComputerChoice() {
         return 'scissors';
     }
 }
+// => d'atutre cas;
+// utiliser plustot variable.. que string
+//const computerInput = [rock, paper, scissor];
+// let chocie = Math.floor(Math.random() * 3);
+// return computerInput[choice];
+
+//const tied = 'Tied';
+//const Won = 'Won';
+//const Lost = 'Lost';
+
 
 function determineWinner(userChoice, computerChoice) {
     if (userChoice === computerChoice) {
         return 'Tied';
     }
     if (userChoice === 'rock') {
-        if (computerChoice === 'scissors') {
+        if (computerChoice === 'scissors') { // => computerChoice ? return Won; return Lost  : pour ecrir dans une phrase
             return 'Won';
         } else {
             return 'Lost';
@@ -77,3 +101,5 @@ function playGame() {
 }
 
 playGame();
+
+
