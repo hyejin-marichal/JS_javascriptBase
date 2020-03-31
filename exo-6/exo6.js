@@ -69,16 +69,35 @@ console.log(team);
 
 
 // utilise for... in
-function sumPoints(obj, pro, pros) {
+// function sumPoints(obj, pro, pros) {
+//     let sumPoints = 0;
+//     for (let points in obj[pro]) {
+//         sumPoints += obj[pro][points][pros];
+//     }
+//     return sumPoints; // return sumPoints;
+// }
+
+//utiliser for .of
+function sumPoints(array, pros) {
     let sumPoints = 0;
-    for (let points in obj[pro]) {
-        sumPoints += obj[pro][points][pros];
+    for (let points of array) {
+        sumPoints += points[pros];
     }
     return sumPoints; // return sumPoints;
 }
+console.log(sumPoints(team._games, 'teamPoints')); // console.log(sumPoints(team));
 
-
-console.log(sumPoints(team, '_games', 'teamPoints')); // console.log(sumPoints(team));
+//  utilise call back
+// function sumPoints(array, cb) {
+//     let sumPoints = 0;
+//     for (let points of array) {
+//         sumPoints += cb(points);
+//     }
+//     return sumPoints; // return sumPoints;
+// }
+//
+//
+// console.log(sumPoints(team._games, (game) => game.teamPoints));
 
 // utilise la methode '.reduce()'
 console.log(team._games.reduce((acc, value) => acc + value.teamPoints, 0));
@@ -99,16 +118,16 @@ console.log(team._games.reduce((acc, value) => acc + value.teamPoints, 0));
 // utilise for.. in avec funtion sumPoints
 
 
-function avgRivalPoints(obj, pro, pros) {
-    let sumOpp = sumPoints(obj, pro, pros);
-    let countOpp = obj[pro].length;
+function avgRivalPoints(array, pros) {
+    let sumOpp = sumPoints(array, pros);
+    let countOpp = array.length;
     return sumOpp / countOpp;
     // console.log(sumOpp / countOpp);
     // console.log(`total points of our ${countOpp} rivals : ${sumOpp}  and average : ${sumOpp / countOpp}`);
 
 }
 
-console.log(avgRivalPoints(team, '_games', 'opponentPoints'));
+console.log(avgRivalPoints(team._games, 'opponentPoints'));
 
 
 // utilise la methode '.reduce()'
