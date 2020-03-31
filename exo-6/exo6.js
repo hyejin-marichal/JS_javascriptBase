@@ -136,12 +136,12 @@ console.log("exo-6");
 
 // commenter cette ligne de code.
 
-var joeInfo = {               // une variable joeInfo est un object qui contient 5 pro
-    name: "Joe's house",
-    rooms: 5,
-    garage: false,
-    bathrooms: 1 + 2,
-    cars: ['Clio', 'Van'],
+var joeInfo = {                // une variable joeInfo est un object qui contient 5 property (key-value)
+    name: "Joe's house",       // un property qui nomée name prend une valeur en chaine de caracteres "Joe's house"
+    rooms: 5,                  // un property qui nomée rooms prend une valeur l'entier 5
+    garage: false,             // un property qui nomée garage prend une valeur type de boolean   false
+    bathrooms: 1 + 2,          // un property qui nomée bathrooms prend une valeur calcul mathematique
+    cars: ['Clio', 'Van'],     // un property qui nomée a uue valeur un tableau  en chaine de caracteres 'Clio', 'Van'
 };
 
 
