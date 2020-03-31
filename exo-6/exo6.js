@@ -23,6 +23,16 @@ function addPlayer(first, last, age) {
     });
 }
 
+
+// let addPlayer = (first, last, age) => {
+//     team._players.push({
+//         firstName: first,
+//         lastName: last,
+//         age: age
+//     });
+// }
+
+
 // 3. Faire la même chose pour un match.
 
 function addGame(rival, teamPoint, rivalPoint) {
@@ -34,11 +44,11 @@ function addGame(rival, teamPoint, rivalPoint) {
 
 // 4. Appeler vos fonctions plusieurs fois pour avoir un object avec suffisamment de données.
 
-addPlayer('a', 'aa', 1);
-addPlayer('b', 'bb', 2);
-addPlayer('c', 'cc', 3);
-addPlayer('d', 'dd', 4);
-addPlayer('e', 'ee', 5);
+addPlayer('A', 'aa', 1);
+addPlayer('B', 'bb', 2);
+addPlayer('C', 'cc', 3);
+addPlayer('D', 'dd', 4);
+addPlayer('E', 'ee', 5);
 addGame('GA', 60, 10);
 addGame('NA', 40, 20);
 addGame('DA', 50, 40);
@@ -122,13 +132,19 @@ function findOlder(obj, pro, name, age) {
 
 findOlder(team, '_players', 'firstName', 'age');
 
-// utiliser la method sort
+// utiliser la method Math.max
+
+// const olderPyaer = () => Math.max(...team._players.map())  // à finir...
 
 
 // 8. Bonus: Trier les joueurs par ordre alphabétique.
 
-let namePlayer = team._players.sort((a, b) => a.firstName.localeCompare(b.firstName, 'en',
-    {ignorePunctuation: true}));
+// let namePlayer = team._players.sort((a, b) => a.firstName.localeCompare(b.firstName, 'en',
+//     {ignorePunctuation: true}));
+// console.log(namePlayer);
+
+let namePlayer = team._players.sort((a, b) => (a.firstName > b.firstName) ? 1 : -1); // pour comparer tout est alphabet soit Majuscule ou Miniscule ca marche sinon utilier facon localeCompare
+
 console.log(namePlayer);
 
 
